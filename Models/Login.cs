@@ -15,6 +15,7 @@ namespace WeddingPlanner.Models
 
         [Required]
         [MinLength(8)]
+        [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string lpassword {get; set;}
 
