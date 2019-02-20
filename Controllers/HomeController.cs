@@ -90,7 +90,6 @@ namespace WeddingPlanner.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.uid = HttpContext.Session.GetInt32("uid");
-            int n = 1;
             var AllWeddings = dbContext.Weddings
                 .Include(person => person.Attendee)
                 .ThenInclude(wed => wed.Wedding)
