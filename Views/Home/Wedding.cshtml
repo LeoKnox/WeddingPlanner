@@ -1,0 +1,11 @@
+<h2>@Model.WedderOne & @Model.WedderTwo's Wedding</h2>
+<a href="/logout">Log Out</a>
+<a href="/guest">Dashboard</a><br>
+<h4>Date @Model.Date.ToString("MM/dd/yyyy")</h4>
+<h4>Guests</h4>
+<ul>
+    @foreach (var guest in @Model.Attendee)
+    {
+        <li>@guest.User.FirstName @guest.User.LastName</li>
+    }
+</ul>

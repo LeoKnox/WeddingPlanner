@@ -1,0 +1,11 @@
+@model Logger
+
+<form asp-action="login" asp-controller="Home" method="post">
+            <span asp-validation-for="lemail"></span>
+            <label asp-for="lemail"></label>
+            <input asp-for="lemail"><br>
+            <span asp-validation-for="lpassword"></span>
+            <label asp-for="lpassword"></label>
+            <input asp-for="lpassword"><br>
+            <input value="Log In" type="submit">
+</form>

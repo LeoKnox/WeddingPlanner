@@ -1,0 +1,32 @@
+@model List<Wedding>
+<h2>Welcome to the Wedding Planner</h2>
+<a href="/logout">Log Out</a>
+<a href="/createWedding">New Wedding</a>
+<table>
+    <tr>
+        <th>Wedding</th>
+        <th>Date</th>
+        <th>Guest</th>
+        <th>Action</th>
+    </tr>
+    @{
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td><a href="wedding/@item.WeddingId">@item.WedderOne & @item.WedderTwo</a></td>
+                <td>@item.Date.ToString("MM/dd/yyyy")____#</td>
+                <td>@item.Attendee.Count</td>
+                <td>
+                    @if (@item.Attendee.Any(a => a.UserId == @ViewBag.uid))
+                    {
+                        <a href="ursvp/@item.WeddingId">Un-RSVP</a>
+                    }
+                    else 
+                    {
+                        <a href="rsvp/@item.WeddingId">RSVP @ViewBag.uid</a>
+                    }
+                </td>
+            </tr>
+        }
+    }
+</table>
