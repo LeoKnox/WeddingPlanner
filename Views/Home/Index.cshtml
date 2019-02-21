@@ -1,4 +1,6 @@
-﻿<h2>Register</h2>
-<partial name="_register"/>
+﻿@model LogReg
+
+<h2>Register</h2>
+<partial name="_register" model="@Model.NewUser"/>
 <h2>Login</h2>
-<partial name="_login"/>
+<partial name="_login" model="@Model.NewLog" />
